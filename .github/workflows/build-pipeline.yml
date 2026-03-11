@@ -1,0 +1,41 @@
+name: Build and Test Pipeline - Joel
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print start message
+        run: echo "Starting build process..."
+
+      - name: Simulate compilation
+        run: sleep 3
+
+      - name: Build success
+        run: echo "Build completed successfully"
+
+      - name: Build author
+        run: echo "Built by Joel"
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run tests
+        run: echo "Running automated tests..."
+
+      - name: Simulate test execution
+        run: sleep 2
+
+      - name: Show date and time
+        run: date
+
+      - name: Test success
+        run: echo "All tests passed for Joel"
